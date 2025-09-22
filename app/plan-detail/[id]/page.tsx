@@ -1,13 +1,13 @@
 import { getPlanById, getAgentById } from '@/libs/microcms';
 import Image from 'next/image';
-interface PlanDetailPageProps {
-  params: {
-    id: string;
-  };
+
+interface PageProps {
+  params: Promise<{ id: string }>
 }
 
-export default async function PlanDetail({ params }: PlanDetailPageProps) {
-  const plan = await getPlanById(params.id);
+export default async function PlanDetail({ params }: PageProps) {
+  const {id} = await params;
+  const plan = await getPlanById(id);
 
   if (!plan) {
     return <div className="min-h-screen flex items-center justify-center bg-gray-100">プランが見つかりませんでした。</div>;
