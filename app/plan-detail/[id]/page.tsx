@@ -1,7 +1,12 @@
 import { getPlanById, getAgentById } from '@/libs/microcms';
 import Image from 'next/image';
+interface PlanDetailPageProps {
+  params: {
+    id: string;
+  };
+}
 
-export default async function PlanDetail({ params }: { params: { id: string } }) {
+export default async function PlanDetail({ params }: PlanDetailPageProps) {
   const plan = await getPlanById(params.id);
 
   if (!plan) {
