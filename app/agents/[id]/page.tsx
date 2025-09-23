@@ -26,10 +26,10 @@ export default async function AgentDetailPage({ params }: PageProps) {
                 alt={`${agent.name} ロゴ`}
                 width={200}
                 height={200}
-                className="rounded-full shadow-md mb-4"
+                className="shadow-md mb-4"
               />
             ) : (
-              <div className="w-40 h-40 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 mb-4">
+              <div className="w-40 h-40 bg-gray-200  flex items-center justify-center text-gray-500 mb-4">
                 ロゴなし
               </div>
             )}
