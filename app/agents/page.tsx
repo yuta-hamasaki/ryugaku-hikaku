@@ -23,10 +23,10 @@ function AgentList({ agents }: { agents: Agent[] }) {
                   alt={`${agent.name}ロゴ`}
                   width={100}
                   height={100}
-                  className="mx-auto rounded-full mb-4"
+                  className="mx-auto mb-4"
                 />
               ) : (
-                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500">
+                <div className="w-24 h-24 bg-gray-200 mx-auto mb-4 flex items-center justify-center text-gray-500">
                   ロゴなし
                 </div>
               )}
