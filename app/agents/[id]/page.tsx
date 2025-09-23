@@ -2,14 +2,14 @@ import { getAgentById } from '@/libs/microcms';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface AgentDetailPageProps {
-  params: {
-    id: string;
-  };
+interface PageProps {
+  params: Promise<{ id: string }>
 }
 
-export default async function AgentDetailPage({ params }: AgentDetailPageProps) {
-  const agent = await getAgentById(params.id);
+
+export default async function AgentDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const agent = await getAgentById(id);
 
   if (!agent) {
     return <div className="min-h-screen flex items-center justify-center bg-gray-100">エージェントが見つかりませんでした。</div>;
